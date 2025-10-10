@@ -1,0 +1,282 @@
+/* GOOGLE FONTS LINKING */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+/* RESET TO DEFAULTS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* CUSTOM CSS VARIABLES */
+:root {
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-navy-950: #0e1323;
+  --color-navy-900: #1c204b;
+  --color-navy-800: #33397a;
+  --color-navy-200: #bbc0ff;
+  --color-orange: #ff8b64;
+  --color-purple-700: #7335d2;
+  --color-purple-600: #5747ea;
+  --color-purple-500: #7078c9;
+  --color-blue-300: #55c2e6;
+  --color-pink-400: #ff5e7d;
+  --color-green-400: #4bcf82;
+  --color-yellow-300: #f1c75b;
+  --color-grey-200: #d8d8d8;
+
+  /* Desktop Font Size */
+  --fs-1: 3.5rem;
+  --fs-2: 2.5rem;
+  --fs-3: 2rem;
+  --fs-4: 1.5rem;
+  --fs-5: 1.125rem;
+  --fs-6: 0.9375rem;
+}
+
+/* GENERAL CSS STYLING */
+body {
+  background: var(--color-navy-950);
+  inline-size: 100%;
+  min-block-size: 100vh;
+  color: var(--color-white);
+  font-family: "Rubik", sans-serif;
+  /* ADD DISPLAY GRID AND CENTER IN TABLET FORM */
+}
+
+img {
+  inline-size: 100%;
+  object-fit: cover;
+  display: block;
+  block-size: auto;
+}
+
+h1 {
+  margin-top: 8px;
+  font-weight: 300;
+  font-size: var(--fs-4);
+  line-height: 21px;
+}
+
+/* GROUPED CSS STYLING */
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTAINER STYLING */
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 5.0625rem 1.5rem;
+}
+
+.profile {
+  background: var(--color-navy-900);
+  border-radius: 15px;
+}
+
+.img-name {
+  display: flex;
+  gap: 24px;
+  background: var(--color-purple-600);
+  padding: 2rem;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.img-name img {
+  inline-size: 4rem;
+  block-size: 4rem;
+  border: 3px solid var(--color-white);
+  border-radius: 100vmax;
+}
+
+.img-name .report {
+  color: var(--color-navy-200);
+  font-size: var(--fs-6);
+  line-height: 18px;
+}
+
+.calendar {
+  display: flex;
+  margin-block: 1.5rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.calendar li a {
+  color: var(--color-purple-500);
+  font-size: var(--fs-5);
+  line-height: 21px;
+  transition: all 0.5s ease;
+}
+
+.calendar li a:hover,
+.calendar li a:focus-within {
+  color: var(--color-white);
+}
+
+/* CARDS STYLING */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+}
+
+.card {
+  inline-size: 100%;
+  block-size: 160px;
+  position: relative;
+}
+
+.top-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-orange);
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.card:nth-child(2) .top-effect {
+  background: var(--color-blue-300);
+}
+
+.card:nth-child(3) .top-effect {
+  background: var(--color-pink-400);
+}
+
+.card:nth-child(4) .top-effect {
+  background: var(--color-green-400);
+}
+
+.card:nth-child(5) .top-effect {
+  background: var(--color-purple-700);
+}
+
+.card:last-child .top-effect {
+  background: var(--color-yellow-300);
+}
+
+.schedule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-navy-900);
+  inline-size: 100%;
+  block-size: 100%;
+  margin-top: 38px;
+  border-radius: 15px;
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.schedule-title,
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-title .title {
+  font-size: var(--fs-4);
+  line-height: 21px;
+  font-weight: 400;
+}
+
+.time h2 {
+  font-size: var(--fs-2);
+  font-weight: 300;
+}
+
+.time p {
+  color: var(--color-navy-200);
+  font-size: var(--fs-6);
+  line-height: 18px;
+}
+
+.top-effect img {
+  display: block;
+  margin-left: auto;
+  margin-right: 1rem;
+  inline-size: 79px;
+  block-size: 79px;
+}
+
+#calendar a.active {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 5rem;
+  }
+
+  .card {
+    block-size: 213px;
+    width: 100%;
+  }
+
+  .time {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .time h2 {
+    font-size: var(--fs-1);
+    line-height: 66px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  h1 {
+    font-size: var(--fs-2);
+    line-height: 47px;
+    max-inline-size: 138px;
+    margin-top: 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr 4fr;
+    gap: 2rem;
+  }
+
+  .cards {
+    row-gap: 4.5rem;
+  }
+
+  .img-name {
+    flex-direction: column;
+    align-items: start;
+    block-size: 354px;
+  }
+
+  .calendar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 2rem;
+    gap: 1.3125rem;
+  }
+}
